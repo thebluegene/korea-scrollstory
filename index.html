@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>South Korea -- Travel Diary</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Inconsolata|Abril+Fatface|Barlow+Semi+Condensed|Fjalla+One" rel="stylesheet">
+  </head>
+  <body>
+    <div class="page col2-grid">
+
+      <div id="vue-nav" class="korea__map-container">
+        <ul class="korea__inner-nav">
+          <li class="korea__home-link js-home">Home</li>
+          <navigation
+            v-for="item in items"
+            v-bind:item="item"
+            v-bind:key="item.id"
+          >
+         </navigation>
+        </ul>
+        <div id="korea__map" style="width: 50%; position:fixed; height: 100vh;"></div>
+      </div>
+      
+      <div class="korea__content">
+        <div class="korea__header">
+          <div>
+            <h1>South Korea</h1>
+            <h2>(November 14-22, 2017)</h2>
+            <div class="korea__nav">
+              <ul>
+                <li class="js-seoul-nav">Seoul</li>
+                <li class="js-jeolla-nav">Jeolla</li>
+                <li class="js-gyeongsang-nav">Gyeongsang</li> 
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="vue-content" class="js-location korea__body" style="display: none">
+          <h3>{{ city }}</h3>
+          <ul>
+            <location-content 
+              v-for="item in location" 
+              v-bind:place="item"
+              v-bind:key="item.id"
+              v-bind:id="item.tag"
+            >
+            </location-content>
+          </li>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="build/main.bundle.js" type="text/javascript"></script>
+  </body>
+</html>

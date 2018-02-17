@@ -1,0 +1,148 @@
+@import 'reset';
+
+$headerFont: 'Abril Fatface', cursive;
+$subFont: 'Inconsolata', monospace;
+$bodyTitle: 'Fjalla One', sans-serif;
+$bodyFont: 'Barlow Semi Condensed', sans-serif;
+$mapColor: #cad2d3;
+$bgColor: white;
+
+#korea__map {
+    top: 0;
+    z-index: 0;
+}
+
+body {
+    background-color: white;
+}
+
+h3 {
+    font-family: $headerFont;
+    font-size: 45px;
+    margin: 45px 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+}
+
+h4 {
+    font-family: $bodyFont;
+    font-size: 32px;
+    color: white;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: $bodyFont;
+}
+
+.hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 450px;
+}
+
+.marker {
+    cursor: pointer;
+    &--seoul {
+        background: rgb(255, 153, 0);
+        border-radius: 50%;
+    }
+
+    &.active {
+        border: 2px solid rgb(0, 0, 0);
+        border-radius: 50%;
+    }
+}
+
+.korea {
+    &__content {
+        float: right;
+        border-left: 2px solid gray;
+        width: 50%;
+        box-sizing: border-box;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+    &__header {
+        padding: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        h1 {
+            display: block;
+            font-family: $headerFont;
+            font-size: 60px;
+            text-align: center;
+            color: black;
+            margin: 0;
+        }
+        h2  {
+            display: block; 
+            font-family: $subFont;
+            position: relative;
+        }
+    }
+
+    &__home-link {
+        text-transform: uppercase;
+        z-index: 9999;
+    }
+
+    &__nav {
+        ul {
+            margin: 25px 0 0;
+            li {
+                display: inline-block;
+                width: 32%;
+                text-transform: uppercase;
+                font-size: 24px;
+                font-family :$bodyFont;
+                cursor: pointer;
+                &:not(:first-of-type) {
+                    &:before {
+                    }
+                }
+            }
+        }
+    }
+
+    &__inner-nav {
+        position: absolute;
+        z-index: 9999;
+        padding: 20px 150px;
+        width: 50%;
+        display: none;
+        justify-content: space-around;
+        box-sizing: border-box;
+        li {
+            display: inline-block;
+        }
+    }
+
+    &__body {
+        height: 100%;
+        ul {
+            height: 100%;
+            li {
+                height: 100vh;
+            }
+        }
+    }
+}
+
+.scroll {
+    position: relative;
+    &__container {
+        display: none;
+    }
+    &__text {
+        .step {
+            height: 500px;
+        }
+    }
+}
